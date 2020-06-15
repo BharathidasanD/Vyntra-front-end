@@ -1,0 +1,121 @@
+
+<div class="form">
+    <div class="sidebar">
+       <h4 [style.color]="(message==='Already Registered email or phone')?'red':'green'"> {{message}}
+           <br>
+           <div *ngIf="message!=='Already Registered email or phone' && message.length!==0">
+               <p>Redirecting to Home</p>
+            <p *ngIf="message!=='Already Registered email or phone' && message.length!==0?goHome():false"></p>
+           </div>
+           
+       </h4>
+      
+        <h3 class="text">Welcome to Shopping...</h3>
+
+        
+    </div>
+
+    <form class="sidebarin" #regForm="ngForm" >
+        <table class="table-width">
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Full Name:</mat-label>
+                        <input type="text" matInput required name="Name" [(ngModel)]="customerModel.name"
+                            #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+                        <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is
+                            required</small>
+
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Email:</mat-label>
+                        <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" matInput
+                            placeholder="agular@gmail.com" [(ngModel)]="customerModel.email" name="email"
+                            #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched">Enter valid
+                            email</small>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Phone:</mat-label>
+                        <input type="tel" required matInput placeholder="9876543210" [(ngModel)]="customerModel.phone"
+                            name="phone" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched">
+                        <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">phone no is
+                            required</small>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="half-width">
+                        <mat-label> Password:</mat-label>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required matInput
+                            placeholder="***" [(ngModel)]="customerModel.user_password" name="password" #pwd1="ngModel"
+                            [class.is-invalid]="pwd1.invalid && pwd1.touched">
+                        <small class="text-danger" [class.d-none]="pwd1.valid || pwd1.untouched">Must contain at least
+                            one number and one uppercase and lowercase letter, and at least 8 or more characters</small>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="half-width">
+                        <mat-label>Confirm Password:</mat-label>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required matInput
+                            placeholder="***" name="cpassword" #pwd2="ngModel"
+                            [(ngModel)]="customerModel.user_cpassword"
+                            [class.is-invalid]="(pwd2.invalid && pwd2.touched) && (pwd2.value!==pwd1.value)">
+                        <small class="text-danger" [class.d-none]="pwd2.value===pwd1.value">Password must be
+                            same</small>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Address:</mat-label>
+                        <input type="text" required matInput [(ngModel)]="customerModel.address" name="address"
+                            #address="ngModel" [class.is-invalid]="address.invalid && address.touched">
+                        <small class="text-danger" [class.d-none]="address.valid || address.untouched">address is
+                            required</small>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="half-width">
+                        <mat-label>Postalcode:</mat-label>
+                        <input type="text" required matInput [(ngModel)]="customerModel.pincode" name="pincode"
+                            #pincode="ngModel" [class.is-invalid]="pincode.invalid && pincode.touched">
+                        <small class="text-danger" [class.d-none]="pincode.valid || pincode.untouched">pincode is
+                            required</small>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="half-width">
+                        <mat-label>City:</mat-label>
+                        <input type="text" required matInput [(ngModel)]="customerModel.city" name="city"
+                            #city="ngModel" [class.is-invalid]="city.invalid && city.touched">
+                        <small class="text-danger" [class.d-none]="city.valid || city.untouched">city is
+                            required</small>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td><button mat-raised-button type="submit" [disabled]="regForm.form.invalid" (click)="CustomerRegistration()">Register</button></td>
+                <td><button mat-raised-button type="reset">Reset</button></td>
+            </tr>
+            <tr>
+                <td><div style="color:indigo;">
+                    
+                    <a routerLink="#"><h4>Already have a account</h4></a>
+                </div></td>
+            </tr>
+        </table>
+    </form>
+</div>

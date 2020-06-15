@@ -1,0 +1,30 @@
+<div>
+<h1>{{product.product_name | titlecase}} Details</h1>
+<table>
+    <tr>
+        <td>Produt Id</td>
+        <td>{{product.product_id}}</td>
+        <td rowspan="4"><img src="{{product.retrived_image}}" height="200" width="200"></td>
+        <td>Product users</td>
+        <td>{{product.type_of_user}}</td>
+        
+    </tr>
+    <tr>
+        <td>product Name</td>
+        <td>{{product.product_name}}</td>
+        <td>Product availability</td>
+        <td>{{product.product_available}}</td>
+    </tr>
+    <tr>
+        <td>Produt Detail</td>
+        <td>{{product.product_detail}}</td>
+        <td>Product Price</td>
+        <td>{{product.product_price}}</td>
+    </tr>
+    <tr>
+        <td colspan="2"><a class="btn btn-small btn-danger" (click)="opendialog()">Delete<mat-icon>delete</mat-icon>
+                </a></td>
+        <td colspan="2"><a class="btn btn-small btn-warning" (click)="editProduct()">Edit<mat-icon>create</mat-icon></a></td>
+    </tr>
+</table>
+</div>

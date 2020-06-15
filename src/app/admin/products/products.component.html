@@ -1,0 +1,30 @@
+
+<h1>Products Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addProduct()">Add New Product</a> <a  class="btn btn-small" routerLink="/admin" style="margin-right: 5%;"><button mat-raised-button><mat-icon>arrow_back</mat-icon>Go back</button></a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.product_id}}</td>
+          <td>{{product.product_name}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewProduct(product.product_id)">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    View Product Details/Add Product 
+    <app-addproduct *ngIf="action === 'add' || action === 'edit' " [product]="selectedProduct" (productadded)="refereshData()"></app-addproduct>
+    <app-viewproducts *ngIf="action === 'view'" [product]="selectedProduct"  (deletedproductevent)="refereshData()"></app-viewproducts>
+  </div>
+</div>

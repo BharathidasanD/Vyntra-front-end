@@ -1,0 +1,25 @@
+<p>viewcustomer works!</p>
+
+<div class="customerDetails">
+    <h2>Customer details</h2>
+  
+    <table class="table">
+      <tr>
+        <td>Customer Id</td>
+        <td>{{customer.user_id}}</td>
+      </tr>
+      <tr>
+        <td>Customer Name</td>
+        <td>{{customer.name}}</td>
+      </tr>
+      <tr>
+        <td>Customer Mail</td>
+        <td>{{customer.email}}</td>
+      </tr>
+       <tr>
+           <td colspan="2"><a class="btn btn-small btn-danger" (click)="deleteCustomer()"> delete</a></td>
+       </tr>
+    </table>
+    <br>
+    
+  </div>
