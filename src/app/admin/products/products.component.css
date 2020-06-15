@@ -1,3 +1,15 @@
 a:hover{
     cursor: pointer;
 }
+.productdetail
+{
+    width:40%;
+    float: left;
+   
+}
+.productview
+{
+    width:45%;
+    float:right;
+    
+}

@@ -1,6 +1,6 @@
-<div class="container row">
-  <div class="col-md-6">
-    <table class="table">
+
+  <div class="customerdetail">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th>ID</th>
@@ -20,12 +20,11 @@
       </tbody>
     </table>
   </div>
-  <div class="col-md-6">
-    Display customer Details and Remove a Customer. <a routerLink="/admin" style="margin-right: 5%;"><button
+  <div class="customerview">
+    <strong>Display customer Details and Remove a Customer.               </strong> <a routerLink="/admin"  ><button color=primary
         mat-raised-button>
         <mat-icon>arrow_back</mat-icon>Go back
       </button></a>
     <app-viewcustomer *ngIf="action === 'view'" [customer]="selectedCustomer" (userDeletedEvent)="refereshData()">
     </app-viewcustomer>
   </div>
-</div>

@@ -1,14 +1,12 @@
 
-<h1>Products Admin</h1>
-<a class="btn btn-primary mb-3" (click)="addProduct()">Add New Product</a> <a  class="btn btn-small" routerLink="/admin" style="margin-right: 5%;"><button mat-raised-button><mat-icon>arrow_back</mat-icon>Go back</button></a>
-<div class="container row">
-  <div class="col-md-6">
-    <table class="table">
+<span><h1>Products Admin</h1><a (click)="addProduct()"><button mat-raised-button color=primary><mat-icon>add</mat-icon>Add New Product</button></a> </span>
+  <div class="productdetail">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th>Product Id</th>
           <th>Product Name</th>
-          <th></th>
+          <th>Product Details</th>
         </tr>
       </thead>
       <tbody>
@@ -22,9 +20,8 @@
       </tbody>
     </table>
   </div>
-  <div class="col-md-6">
-    View Product Details/Add Product 
+  <div class="productview">
+    View Product Details/Add Product <a  class="btn btn-small" routerLink="/admin" style="margin-right: 5%;"><button mat-raised-button color=accent><mat-icon>arrow_back</mat-icon>Go back</button></a>
     <app-addproduct *ngIf="action === 'add' || action === 'edit' " [product]="selectedProduct" (productadded)="refereshData()"></app-addproduct>
     <app-viewproducts *ngIf="action === 'view'" [product]="selectedProduct"  (deletedproductevent)="refereshData()"></app-viewproducts>
   </div>
-</div>

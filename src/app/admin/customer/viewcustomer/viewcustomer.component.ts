@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Customer } from 'src/app/Customer';
 import { CustomersService } from 'src/app/services/customers.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DeletedialogComponent } from '../../products/viewproducts/deletedialog/deletedialog.component';
 
 @Component({
   selector: 'app-viewcustomer',
@@ -17,7 +19,7 @@ export class ViewcustomerComponent implements OnInit {
   userDeletedEvent=new EventEmitter();
 
 
-  constructor(private customerservice:CustomersService,private router:Router) { }
+  constructor(private customerservice:CustomersService,private router:Router,private dialog:MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +32,19 @@ export class ViewcustomerComponent implements OnInit {
         this.router.navigate(['admin','customers']);
       }
     );
+  }
+
+  opendialog()
+  {
+    let dialogref=this.dialog.open(DeletedialogComponent);
+    dialogref.afterClosed().subscribe(result=>{
+      console.log(result);
+      if(result=='yes')
+      {
+        this.deleteCustomer();
+      }
+
+    });
   }
 
 }
