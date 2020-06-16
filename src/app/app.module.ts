@@ -25,6 +25,9 @@ import { ViewproductsComponent } from './admin/products/viewproducts/viewproduct
 import { CustomershoppingComponent } from './customershopping/customershopping.component'
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeletedialogComponent } from './admin/products/viewproducts/deletedialog/deletedialog.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,7 @@ import { DeletedialogComponent } from './admin/products/viewproducts/deletedialo
   imports: [
     BrowserModule,MatToolbarModule,MatSidenavModule,MatCardModule,MatFormFieldModule,HttpClientModule,FormsModule,
     AppRoutingModule,MatIconModule,MatListModule,MatMenuModule,MatInputModule,MatButtonModule,MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,MatTableModule,MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

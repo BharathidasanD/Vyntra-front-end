@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { Product } from 'src/app/Product';
 import { ProductService } from 'src/app/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-products',
@@ -14,6 +16,11 @@ export class ProductsComponent implements OnInit {
   action:string;
   retrivedProduct:Array<Product>;
   selectedProduct:Product;
+
+  displayedColumns:string[];
+  dataSource:any;
+
+  @ViewChild(MatPaginator) paginator:MatPaginator;
 
   constructor(private productservice:ProductService,private router:Router,private activatedRoute:ActivatedRoute) { }
 
@@ -56,6 +63,11 @@ export class ProductsComponent implements OnInit {
       productwithretrivedimage.picByte=product.picByte;
       this.products.push(productwithretrivedimage);
     }
+
+    this.displayedColumns= ['product_id', 'product_name','Detail'];
+    this.dataSource = new MatTableDataSource(this.products);
+    this.dataSource.paginator=this.paginator;
+
   }
 
  addProduct()
@@ -69,5 +81,10 @@ export class ProductsComponent implements OnInit {
    
     this.router.navigate(['admin','products'],{queryParams:{productid,action: 'view' }});
  }
+
+ search(filterdata:string)
+  {
+    this.dataSource.filter=filterdata.trim().toLowerCase();
+  }
 
 }

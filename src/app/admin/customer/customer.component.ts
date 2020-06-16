@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'src/app/Customer';
 import { CustomersService } from 'src/app/services/customers.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
@@ -15,6 +17,13 @@ export class CustomerComponent implements OnInit {
   action:string;
   selectedCustomer:Customer;
 
+
+  
+  displayedColumns:string[];
+  dataSource:any;
+
+  @ViewChild(MatPaginator) paginator:MatPaginator;
+
   constructor(private customerservice:CustomersService,
     private router: Router,
     private activatedRoute:ActivatedRoute) { }
@@ -22,7 +31,9 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
 
     this.refereshData();
-
+    
+   
+    
   }
   refereshData(){
     this.customerservice.getCustomers().subscribe(data=>this.handleSuccessfulResponse(data));
@@ -40,8 +51,17 @@ export class CustomerComponent implements OnInit {
 
   handleSuccessfulResponse(data) {
     this.Customers = data;
+    this.displayedColumns= ['user_id', 'name', 'Address', 'Detail'];
+    this.dataSource = new MatTableDataSource(this.Customers);
+    this.dataSource.paginator=this.paginator;
+    console.log(this.Customers);
   }
   viewCustomer(id: number) {
     this.router.navigate(['admin','customers'], {queryParams : {id, action: 'view'}});
+  }
+
+  search(filterdata:string)
+  {
+    this.dataSource.filter=filterdata.trim().toLowerCase();
   }
 }

@@ -1,4 +1,4 @@
-
+<!--
   <div class="customerdetail">
     <table class="table table-striped">
       <thead>
@@ -27,4 +27,54 @@
       </button></a>
     <app-viewcustomer *ngIf="action === 'view'" [customer]="selectedCustomer" (userDeletedEvent)="refereshData()">
     </app-viewcustomer>
+  </div>-->
+  <h2>Customers Admin.</h2>
+<mat-form-field style="margin-left: 2%;">
+  <input type="text" matInput placeholder="search here.." (keyup)="search($event.target.value)">
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <div class="customerdetail">
+    <mat-table [dataSource]="dataSource" >
+      <!-- id Column -->
+      <ng-container matColumnDef="user_id">
+        <mat-header-cell *matHeaderCellDef>Customer Id </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.user_id}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Customer Name </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.name}} </mat-cell>
+      </ng-container>
+
+      <!-- address Column -->
+      <ng-container matColumnDef="Address">
+        <mat-header-cell *matHeaderCellDef>Customer Address</mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.address}} </mat-cell>
+      </ng-container>
+
+      <!-- deatail Column -->
+      <ng-container matColumnDef="Detail">
+        <mat-header-cell *matHeaderCellDef> Deatils </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> <button type="button" mat-raised-button color=primary
+            (click)="viewCustomer(customer.user_id)">Show
+            Details</button> </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator  [pageSizeOptions]="[5,10]" showFirstLastButtons></mat-paginator>
+ 
   </div>
+</div>
+
+
+<div class="customerview">
+  <strong>Display customer Details and Remove a Customer.</strong> <a routerLink="/admin"><button color=accent
+      mat-raised-button>
+      <mat-icon>arrow_back</mat-icon>Go back
+    </button></a>
+  <app-viewcustomer *ngIf="action === 'view'" [customer]="selectedCustomer" (userDeletedEvent)="refereshData()">
+  </app-viewcustomer>
+</div>
