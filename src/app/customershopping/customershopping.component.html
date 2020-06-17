@@ -17,9 +17,12 @@
         </div>
     </div>
 </div>-->
-<div class="container row" style="margin-top: 2%;">
-    <div class="col-md-4" *ngFor="let product of  products;let i=index">
-        <mat-card class="product-card">
+<div class="imageslider" style="width: 100%;">
+    <app-imageslider></app-imageslider>
+</div>
+<div class="product-container" style="margin-top: 2%;">
+    <div  *ngFor="let product of  products;let i=index">
+        <mat-card>
             <mat-card-header>
                 <mat-card-title>{{product.product_name}}</mat-card-title>
             </mat-card-header>
@@ -30,6 +33,7 @@
                 </p>
             </mat-card-content>
             <mat-card-actions>
+                <p>₹{{product.product_price}}</p>
                 <button mat-raised-button color="primary">Buy</button>
                 <button mat-raised-button>SHARE</button>
             </mat-card-actions>

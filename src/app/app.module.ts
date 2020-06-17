@@ -27,6 +27,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DeletedialogComponent } from './admin/products/viewproducts/deletedialog/deletedialog.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {NgImageSliderModule} from 'ng-image-slider';
+import { ImagesliderComponent } from './imageslider/imageslider.component';
 
 
 @NgModule({
@@ -41,12 +43,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AddproductComponent,
     ViewproductsComponent,
     CustomershoppingComponent,
-    DeletedialogComponent
+    DeletedialogComponent,
+    ImagesliderComponent,
+   
   ],
   imports: [
     BrowserModule,MatToolbarModule,MatSidenavModule,MatCardModule,MatFormFieldModule,HttpClientModule,FormsModule,
     AppRoutingModule,MatIconModule,MatListModule,MatMenuModule,MatInputModule,MatButtonModule,MatDialogModule,
-    BrowserAnimationsModule,MatTableModule,MatPaginatorModule
+    BrowserAnimationsModule,MatTableModule,MatPaginatorModule,NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
