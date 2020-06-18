@@ -29,6 +29,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {NgImageSliderModule} from 'ng-image-slider';
 import { ImagesliderComponent } from './imageslider/imageslider.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ImagesliderComponent } from './imageslider/imageslider.component';
     CustomershoppingComponent,
     DeletedialogComponent,
     ImagesliderComponent,
+    LoginComponent,
    
   ],
   imports: [

@@ -4,9 +4,11 @@
       width: 300px;
   }
   .imageslider{
-    margin-left: 20%;
-    margin-right: 10%;
+    margin-left: 10%;
+    margin-right: 20%;
     margin-top: 2%;
+    width: 80%;
+    height: 20%;
   }
   .product-container
   {
@@ -15,4 +17,5 @@
       grid-gap: 10px;
       grid-template-columns: auto auto auto auto;
       justify-content:flex-start;
+      width: auto;
   }
