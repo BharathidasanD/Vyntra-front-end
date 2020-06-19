@@ -6,3 +6,10 @@ a:hover
 {
     cursor: pointer;
 }
+.viewtable td, .viewtable th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    box-shadow: 0 0 black;
+    width:450px;
+}

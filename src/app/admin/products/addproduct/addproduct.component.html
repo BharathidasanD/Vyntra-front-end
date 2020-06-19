@@ -2,30 +2,30 @@
 
 <form>
   <label for="name">Name</label>
-  <input type="text" class="form-control" id="name" placeholder="Product Name" [(ngModel)]="product.product_name"
+  <input type="text" class="productform" id="name" placeholder="Product Name" required [(ngModel)]="product.product_name"
     name="name">
 
   <label for="detail">Detail</label>
-  <input type="text" class="form-control" id="author" placeholder="details" name="product_detail"
+  <input type="text" class="productform" id="author" placeholder="details"  required name="product_detail"
     [(ngModel)]="product.product_detail">
 
   <label for="price">Price</label>
-  <input type="text" class="form-control" id="price" placeholder="price" name="price"
+  <input type="text" class="productform" id="price" placeholder="price" name="price" required
     [(ngModel)]="product.product_price">
 
   <label for="user">Type of User</label>
-  <select class="mdb-select md-form" id="type_of_user" class="form-control" placeholder="type of uer" name="type_of_user" [(ngModel)]="product.type_of_user">
+  <select class="mdb-select md-form" id="type_of_user" class="productform"  required placeholder="type of uer" name="type_of_user" [(ngModel)]="product.type_of_user">
     <option value="Mens">Men</option>
     <option value="WoMen">Women</option>
     <option value="Children">Children</option>
     <option value="Both">Both</option>
     <option value="Home">Home</option>
   </select>
-  <!--<input type="text" class="form-control" id="price" placeholder="type of uer" name="type_of_user"
+  <!--<input type="text" class="productform" id="price" placeholder="type of uer" name="type_of_user"
     [(ngModel)]="product.type_of_user">-->
 
   <label for="availability">Available products</label>
-  <input type="number" class="form-control" id="available products" placeholder="available products" name="product_available"
+  <input type="number" class="productform" id="available products" required placeholder="available products" name="product_available"
     [(ngModel)]="product.product_available">
 
     <!--image field viewed onlt for addning purpose not for edit-->
