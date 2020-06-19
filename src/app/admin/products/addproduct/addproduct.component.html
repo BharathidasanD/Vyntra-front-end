@@ -14,7 +14,7 @@
     [(ngModel)]="product.product_price">
 
   <label for="user">Type of User</label>
-  <select class="mdb-select md-form" id="type_of_user" class="productform"  required placeholder="type of uer" name="type_of_user" [(ngModel)]="product.type_of_user">
+  <select  id="type_of_user" class="productform"  required placeholder="type of uer" name="type_of_user" [(ngModel)]="product.type_of_user">
     <option value="Mens">Men</option>
     <option value="WoMen">Women</option>
     <option value="Children">Children</option>
@@ -30,7 +30,7 @@
 
     <!--image field viewed onlt for addning purpose not for edit-->
   <div *ngIf="product.product_id == null">
-    <h4 class="text-danger">Image size not more than 50kb</h4>
+    <h4 style="color: red;">Image size not more than 50kb</h4>
     <br>
     <input type="file" (change)="onFileChanged($event)">
     <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
@@ -38,5 +38,5 @@
 
   <br>
   <br>
-  <button type="button" class="btn btn-success" (click)="saveProduct()">Save Product</button>
+  <button type="button" style="color:white;background-color: green;border-radius: 5px;height:45px;" (click)="saveProduct()">Save Product</button>
 </form>

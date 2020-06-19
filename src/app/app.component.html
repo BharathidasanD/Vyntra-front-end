@@ -1,15 +1,15 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <button (click)="sidenav.toggle()" mat-icon-button>
-      <mat-icon  aria-hidden="false" aria-label="Menu icon">view_list</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Menu icon">view_list</mat-icon>
     </button>
 
     <span class="example-spacer"></span>
 
-    <form class="search" >
+    <form class="search">
       <input matInput placeholder="Search here..." class="search-box" style="background-color: aliceblue;">
-      <button type="submit" mat-icon-button class="searchicon" >
-        <mat-icon aria-hidden="false" aria-label="search icon" >search</mat-icon>
+      <button type="submit" mat-icon-button class="searchicon">
+        <mat-icon aria-hidden="false" aria-label="search icon">search</mat-icon>
       </button>
     </form>
 
@@ -23,25 +23,24 @@
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
       <span (mouseleave)="menuTrigger.closeMenu()">
-        <a routerLink="register"><button mat-menu-item >
-          <mat-icon>how_to_reg</mat-icon>
-          <span>Login/Signup</span>
-        </button></a>
+        <a routerLink="register"><button mat-menu-item>
+            <mat-icon>how_to_reg</mat-icon>
+            <span>Login/Signup</span>
+          </button></a>
         <button mat-menu-item>
           <mat-icon>alarm</mat-icon>
           <span>Rewards</span>
         </button>
-       <a routerLink="myprofile"> <button mat-menu-item>
-          <mat-icon>person</mat-icon>
-          <span>My Profile</span>
-        </button></a>
-       <a routerLink="logout"> <button mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon>
-          <span>Logout</span>
-        </button></a>
+        <a routerLink="myprofile"> <button mat-menu-item>
+            <mat-icon>person</mat-icon>
+            <span>My Profile</span>
+          </button></a>
+        <a routerLink="logout"> <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button></a>
       </span>
     </mat-menu>
-
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container>
@@ -51,36 +50,36 @@
         <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>Home
       </a>
       <a style="height:60px" routerLink='today' mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">card_giftcard</mat-icon>Today's Deals
+        <mat-icon aria-hidden="false" aria-label="today deal">card_giftcard</mat-icon>Today's Deals
       </a>
       <a style="height:60px" mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">person</mat-icon>Men
+        <mat-icon aria-hidden="false" aria-label="men">person</mat-icon>Men
       </a>
       <a style="height:60px" mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">person</mat-icon>Women
+        <mat-icon aria-hidden="false" aria-label="women">person</mat-icon>Women
       </a>
       <a style="height:60px" mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">child_care</mat-icon>Children
+        <mat-icon aria-hidden="false" aria-label="children">child_care</mat-icon>Children
       </a>
       <a style="height:60px" mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">house</mat-icon>Home & Living
+        <mat-icon aria-hidden="false" aria-label="home and living">house</mat-icon>Home & Living
       </a>
       <a style="height:60px" mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">bookmark_border</mat-icon>Wishlist
+        <mat-icon aria-hidden="false" aria-label="wishlist">bookmark_border</mat-icon>Wishlist
       </a>
       <a style="height:60px" mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">shopping_cart</mat-icon>Your Orders
+        <mat-icon aria-hidden="false" aria-label="your order">shopping_cart</mat-icon>Your Orders
       </a>
       <a style="height:60px" mat-list-item (click)="sidenav.close()">
-        <mat-icon aria-hidden="false" aria-label="home icon">contact_mail</mat-icon>Customer Service
+        <mat-icon aria-hidden="false" aria-label="customer service">contact_mail</mat-icon>Customer Service
       </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet>
-       
+
 
     </router-outlet>
-       <p style="height:auto;"></p>
+    <p style="height:auto;"></p>
   </mat-sidenav-content>
 </mat-sidenav-container>
