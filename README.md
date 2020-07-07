@@ -1,3 +1,13 @@
+#Admin interface
+http://localhost:4200/admin
+#Customer Interface 
+http://localhost:4200/home
+
+#Yet to complete 
+ using spring security create a login page and shopping cart.
+
+
+
 # VyntraDemo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
