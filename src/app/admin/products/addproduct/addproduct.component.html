@@ -1,20 +1,20 @@
-<h1>{{product.product_id == null ? 'Add' : 'Edit'}} Product - {{product.product_id}}</h1>
+<h1>{{product.productId == null ? 'Add' : 'Edit'}} Product - {{product.productId}}</h1>
 
 <form>
   <label for="name">Name</label>
-  <input type="text" class="productform" id="name" placeholder="Product Name" required [(ngModel)]="product.product_name"
+  <input type="text" class="productform" id="name" placeholder="Product Name" required [(ngModel)]="product.productName"
     name="name">
 
   <label for="detail">Detail</label>
-  <input type="text" class="productform" id="author" placeholder="details"  required name="product_detail"
-    [(ngModel)]="product.product_detail">
+  <input type="text" class="productform" id="author" placeholder="details"  required name="productDetail"
+    [(ngModel)]="product.productDetail">
 
   <label for="price">Price</label>
   <input type="text" class="productform" id="price" placeholder="price" name="price" required
-    [(ngModel)]="product.product_price">
+    [(ngModel)]="product.productPrice">
 
   <label for="user">Type of User</label>
-  <select  id="type_of_user" class="productform"  required placeholder="type of uer" name="type_of_user" [(ngModel)]="product.type_of_user">
+  <select  id="type_of_user" class="productform"  required placeholder="type of uer" name="type_of_user" [(ngModel)]="product.typeOfUser">
     <option value="Mens">Men</option>
     <option value="WoMen">Women</option>
     <option value="Children">Children</option>
@@ -26,10 +26,10 @@
 
   <label for="availability">Available products</label>
   <input type="number" class="productform" id="available products" required placeholder="available products" name="product_available"
-    [(ngModel)]="product.product_available">
+    [(ngModel)]="product.productAvailable">
 
     <!--image field viewed onlt for addning purpose not for edit-->
-  <div *ngIf="product.product_id == null">
+  <div *ngIf="product.productId == null">
     <h4 style="color: red;">Image size not more than 50kb</h4>
     <br>
     <input type="file" (change)="onFileChanged($event)">

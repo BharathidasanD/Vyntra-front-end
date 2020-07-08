@@ -43,7 +43,7 @@ export class AddproductComponent implements OnInit {
   }
 
   saveProduct(){
-    if(this.product.product_id==null){
+    if(this.product.productId==null){
     const uploadData = new FormData();
     uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
     this.selectedFile.imageName = this.selectedFile.name;

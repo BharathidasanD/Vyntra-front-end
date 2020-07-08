@@ -31,6 +31,7 @@ import {NgImageSliderModule} from 'ng-image-slider';
 import { ImagesliderComponent } from './imageslider/imageslider.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ShoppingcartComponent } from './customershopping/shoppingcart/shoppingcart.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { LogoutComponent } from './logout/logout.component';
     ImagesliderComponent,
     LoginComponent,
     LogoutComponent,
+    ShoppingcartComponent,
    
   ],
   imports: [

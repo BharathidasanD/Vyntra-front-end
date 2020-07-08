@@ -1,25 +1,25 @@
 <div>
-<h1>{{product.product_name | titlecase}} Details</h1>
+<h1>{{product.productName | titlecase}} Details</h1>
 <table >
     <tr>
         <td>Produt Id</td>
-        <td>{{product.product_id}}</td>
-        <td rowspan="4"><img src="{{product.retrived_image}}" height="200" width="200"></td>
+        <td>{{product.productId}}</td>
+        <td rowspan="4"><img src="{{product.retrivedImage}}" height="200" width="200"></td>
         <td>Product users</td>
-        <td>{{product.type_of_user}}</td>
+        <td>{{product.typeOfUser}}</td>
         
     </tr>
     <tr>
         <td>product Name</td>
-        <td>{{product.product_name}}</td>
+        <td>{{product.productName}}</td>
         <td>Product availability</td>
-        <td>{{product.product_available}}</td>
+        <td>{{product.productAvailable}}</td>
     </tr>
     <tr>
         <td>Produt Detail</td>
-        <td>{{product.product_detail}}</td>
+        <td>{{product.productDetail}}</td>
         <td>Product Price</td>
-        <td>{{product.product_price}}</td>
+        <td>{{product.productPrice}}</td>
     </tr>
     <tr>
         <td colspan="2"><a style="color:white;background-color:red;border-radius: 5px;height:100px;padding: 10px;"(click)="opendialog()">Delete<mat-icon style="color: black;">delete</mat-icon>

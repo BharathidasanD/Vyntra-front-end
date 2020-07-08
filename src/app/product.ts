@@ -1,13 +1,13 @@
 export class Product{
 
-    public product_id:number;
-        public product_name:string;
-        public product_detail:string;
-        public type_of_user:string;
-        public product_price:number;
-        public product_available:number;
+    public productId:number;
+        public productName:string;
+        public productDetail:string;
+        public typeOfUser:string;
+        public productPrice:number;
+        public productAvailable:number;
         public picByte:string;
-        public retrived_image:string;
+        public retrivedImage:string;
     constructor(){
 
     }

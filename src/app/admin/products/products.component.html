@@ -1,25 +1,6 @@
 
 <span><h1>Products Admin</h1><a (click)="addProduct()"><button mat-raised-button color=primary><mat-icon>add</mat-icon>Add New Product</button></a> </span>
-  <!--<div class="productdetail">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Product Id</th>
-          <th>Product product_name</th>
-          <th>Product Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of products">
-          <td>{{product.product_id}}</td>
-          <td>{{product.product_product_name}}</td>
-          <td>
-            <button type="button" class="btn btn-primary" (click)="viewProduct(product.product_id)">Show Details</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>-->
+  
   <mat-form-field style="margin-left: 2%;">
     <input type="text" matInput placeholder="search here.." (keyup)="search($event.target.value)">
   </mat-form-field>
@@ -27,15 +8,15 @@
     <div class="productdetail">
       <mat-table [dataSource]="dataSource" >
         <!-- id Column -->
-        <ng-container matColumnDef="product_id">
+        <ng-container matColumnDef="productId">
           <mat-header-cell *matHeaderCellDef>Product Id </mat-header-cell>
-          <mat-cell *matCellDef="let product"> {{product.product_id}} </mat-cell>
+          <mat-cell *matCellDef="let product"> {{product.productId}} </mat-cell>
         </ng-container>
   
         <!-- product_name Column -->
-        <ng-container matColumnDef="product_name">
+        <ng-container matColumnDef="productName">
           <mat-header-cell *matHeaderCellDef>product Name </mat-header-cell>
-          <mat-cell *matCellDef="let product"> {{product.product_name}} </mat-cell>
+          <mat-cell *matCellDef="let product"> {{product.productName}} </mat-cell>
         </ng-container>
   
         
@@ -44,7 +25,7 @@
         <ng-container matColumnDef="Detail">
           <mat-header-cell *matHeaderCellDef> Deatils </mat-header-cell>
           <mat-cell *matCellDef="let product"> <button type="button" mat-raised-button color=primary
-              (click)="viewProduct(product.product_id)">Show
+              (click)="viewProduct(product.productId)">Show
               Details</button> </mat-cell>
         </ng-container>
   

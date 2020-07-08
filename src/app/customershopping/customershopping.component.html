@@ -6,16 +6,16 @@
     <div  *ngFor="let product of  products;let i=index">
         <mat-card>
             <mat-card-header>
-                <mat-card-title>{{product.product_name}}</mat-card-title>
+                <mat-card-title>{{product.productName | titlecase}}</mat-card-title>
             </mat-card-header>
-            <img class="imageprop" mat-card-image src="{{product.retrived_image}}" alt="{{product.product_name}}">
+            <img class="imageprop" mat-card-image src="{{product.retrivedImage}}" alt="{{product.productName}}">
             <mat-card-content>
                 <p>
-                    {{product.product_detail | titlecase}}
+                    {{product.productDetail | titlecase}}
                 </p>
             </mat-card-content>
             <mat-card-actions>
-                <p>₹{{product.product_price}}</p>
+                <p>₹{{product.productPrice}}</p>
                 <button mat-raised-button color="primary">Buy</button>
                 <button mat-raised-button>SHARE</button>
             </mat-card-actions>

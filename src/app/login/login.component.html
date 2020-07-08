@@ -1,7 +1,7 @@
-<p>login works!</p>
 
 <div class="form">
     <div class="sidebar">
+        <h4 style="color:red"> {{message}}</h4>
         <!--<h4 [style.color]="(message==='inavlid user')?'red':'green'"> {{message}}
             <br>
             <div *ngIf="message!=='invalid user' && message.length!==0">
@@ -47,7 +47,7 @@
 
 
             <tr>
-                <td><button mat-raised-button type="submit" [disabled]="loginForm.form.invalid" style="margin-left: 40%;"
+                <td><button mat-raised-button type="submit" [disabled]="loginForm.form.invalid" style="margin-left: 40%;" (click)=' admin_login()'
                         >Login</button></td>
             </tr>
             <tr>

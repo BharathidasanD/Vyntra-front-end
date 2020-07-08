@@ -26,13 +26,13 @@ export class ViewproductsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("here");
-    console.log(this.product.product_id);
+    console.log(this.product.productId);
   }
 
   deleteProduct()
   {
     
-    this.productservice.deleteProduct(this.product.product_id).subscribe(
+    this.productservice.deleteProduct(this.product.productId).subscribe(
       (product)=>{
         this.deletedproductevent.emit();
         this.router.navigate(['admin','products']);
@@ -43,7 +43,7 @@ export class ViewproductsComponent implements OnInit {
 
   editProduct()
   {
-    this.router.navigate(['admin','products'],{queryParams: { action: 'edit', productid: this.product.product_id } })
+    this.router.navigate(['admin','products'],{queryParams: { action: 'edit', productid: this.product.productId } })
   }
   opendialog()
   {

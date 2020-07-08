@@ -39,7 +39,7 @@ export class ProductsComponent implements OnInit {
         //based on the id retrive product from products array
         if(id){
           this.selectedProduct=this.products.find(product=>{
-            return product.product_id===+id;
+            return product.productId===+id;
           })
         }
 
@@ -53,18 +53,18 @@ export class ProductsComponent implements OnInit {
     this.retrivedProduct=response;
     for(const product of this.retrivedProduct){
       const productwithretrivedimage=new Product();
-      productwithretrivedimage.product_id=product.product_id;
-      productwithretrivedimage.product_name=product.product_name;
-      productwithretrivedimage.retrived_image='data:image/jpeg;base64,'+product.picByte;
-      productwithretrivedimage.product_detail=product.product_detail;
-      productwithretrivedimage.product_available=product.product_available;
-      productwithretrivedimage.product_price=product.product_price;
-      productwithretrivedimage.type_of_user=product.type_of_user;
+      productwithretrivedimage.productId=product.productId;
+      productwithretrivedimage.productName=product.productName;
+      productwithretrivedimage.retrivedImage='data:image/jpeg;base64,'+product.picByte;
+      productwithretrivedimage.productDetail=product.productDetail;
+      productwithretrivedimage.productAvailable=product.productAvailable;
+      productwithretrivedimage.productPrice=product.productPrice;
+      productwithretrivedimage.typeOfUser=product.typeOfUser;
       productwithretrivedimage.picByte=product.picByte;
       this.products.push(productwithretrivedimage);
     }
 
-    this.displayedColumns= ['product_id', 'product_name','Detail'];
+    this.displayedColumns= ['productId', 'productName','Detail'];
     this.dataSource = new MatTableDataSource(this.products);
     this.dataSource.paginator=this.paginator;
 

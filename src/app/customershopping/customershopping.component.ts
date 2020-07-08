@@ -29,13 +29,13 @@ export class CustomershoppingComponent implements OnInit  {
     this.retrivedProduct=response;
     for(const product of this.retrivedProduct){
       const productwithretrivedimage=new Product();
-      productwithretrivedimage.product_id=product.product_id;
-      productwithretrivedimage.product_name=product.product_name;
-      productwithretrivedimage.retrived_image='data:image/jpeg;base64,'+product.picByte;
-      productwithretrivedimage.product_detail=product.product_detail;
-      productwithretrivedimage.product_available=product.product_available;
-      productwithretrivedimage.product_price=product.product_price;
-      productwithretrivedimage.type_of_user=product.type_of_user;
+      productwithretrivedimage.productId=product.productId;
+      productwithretrivedimage.productName=product.productName;
+      productwithretrivedimage.retrivedImage='data:image/jpeg;base64,'+product.picByte;
+      productwithretrivedimage.productDetail=product.productDetail;
+      productwithretrivedimage.productAvailable=product.productAvailable;
+      productwithretrivedimage.productPrice=product.productPrice;
+      productwithretrivedimage.typeOfUser=product.typeOfUser;
       productwithretrivedimage.picByte=product.picByte;
       this.products.push(productwithretrivedimage);
     }
