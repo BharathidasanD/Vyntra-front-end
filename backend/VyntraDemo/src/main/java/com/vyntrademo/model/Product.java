@@ -12,68 +12,68 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long product_id;
+	private Long productId;
 	@NotNull
-	private String product_name;
+	private String productName;
 	@NotNull
-	private String product_detail;
+	private String productDetail;
 	@NotNull
-	private String type_of_user; //male or female or children
+	private String typeOfUser; //male or female or children
 	@NotNull
-	private Double product_price;
+	private Double productPrice;
 	@NotNull
-	private Integer product_available;// no of available products
+	private Integer productAvailable;// no of available products
 	
 	@NotNull
 	@Column(name="picByte",length=1000)
 	private byte[] picByte;
 
-	public Long getProduct_id() {
-		return product_id;
+	public Long getProductId() {
+		return productId;
 	}
 
-	public void setProduct_id(Long product_id) {
-		this.product_id = product_id;
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
 
-	public String getProduct_name() {
-		return product_name;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getProduct_detail() {
-		return product_detail;
+	public String getProductDetail() {
+		return productDetail;
 	}
 
-	public void setProduct_detail(String product_detail) {
-		this.product_detail = product_detail;
+	public void setProductDetail(String productDetail) {
+		this.productDetail = productDetail;
 	}
 
-	public String getType_of_user() {
-		return type_of_user;
+	public String getTypeOfUser() {
+		return typeOfUser;
 	}
 
-	public void setType_of_user(String type_of_user) {
-		this.type_of_user = type_of_user;
+	public void setTypeOfUser(String typeOfUser) {
+		this.typeOfUser = typeOfUser;
 	}
 
-	public Double getProduct_price() {
-		return product_price;
+	public Double getProductPrice() {
+		return productPrice;
 	}
 
-	public void setProduct_price(Double product_price) {
-		this.product_price = product_price;
+	public void setProductPrice(Double productPrice) {
+		this.productPrice = productPrice;
 	}
 
-	public Integer getProduct_available() {
-		return product_available;
+	public Integer getProductAvailable() {
+		return productAvailable;
 	}
 
-	public void setProduct_available(Integer product_available) {
-		this.product_available = product_available;
+	public void setProductAvailable(Integer productAvailable) {
+		this.productAvailable = productAvailable;
 	}
 
 	public byte[] getPicByte() {
@@ -83,6 +83,10 @@ public class Product {
 	public void setPicByte(byte[] picByte) {
 		this.picByte = picByte;
 	}
+
+	
+
+	
 	
 
 }

@@ -54,7 +54,7 @@ public class ProductController {
 	public String removeProduct(@PathVariable("id") long id) {
 		Product product = productrepo.getOne(id);
 		productrepo.deleteById(id);
-		return product.getProduct_name()+" deleted successfully";
+		return product.getProductName()+" deleted successfully";
 	}
 
 	public byte[] getBytes() {

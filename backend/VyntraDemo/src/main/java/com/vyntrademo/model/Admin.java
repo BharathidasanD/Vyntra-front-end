@@ -45,7 +45,7 @@ public class Admin  extends User{
 	@Override
 	public String toString() {
 		return "Admin [name=" + name + ", email=" + email + ", phone=" + phone + ", admintype=" + admintype
-				+ ", user_id=" + user_id + ", user_password=" + user_password + "]";
+				+ ", user_id=" + userId + ", user_password=" + userPassword + "]";
 	}
 	  
 }

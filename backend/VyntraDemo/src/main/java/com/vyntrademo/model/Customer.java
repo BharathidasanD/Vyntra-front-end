@@ -59,8 +59,8 @@ public class Customer extends User {
 	@Override
 	public String toString() {
 		return "Customer [name=" + name + ", email=" + email + ", phone=" + phone + ", address=" + address
-				+ ", pincode=" + pincode + ", city=" + city + ", user_id=" + user_id + ", user_password="
-				+ user_password + "]";
+				+ ", pincode=" + pincode + ", city=" + city + ", user_id=" + userId + ", user_password="
+				+ userPassword + "]";
 	}
 	
 	
