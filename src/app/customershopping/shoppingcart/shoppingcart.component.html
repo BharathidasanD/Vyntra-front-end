@@ -1,1 +1,28 @@
-<p>shoppingcart works!</p>
+<div  *ngFor="let product of  cartProducts;let i=index">
+    <table >
+        <tr>
+            <td rowspan="5"> <img class="imageprop" mat-card-image src="{{product.retrivedImage}}" alt="{{product.productName}}"></td>
+            <td>Product Name:</td>
+            <td>{{product.productName | titlecase}}</td>
+        </tr>
+     <tr>
+        <td>Product Detail:</td>
+         <td> {{product.productDetail | titlecase}}</td>
+     </tr>
+     <tr>
+        
+            <td>Number of Products:</td>
+            <td> <input type="number" name="noofproducts" #noofproducts="ngModel" [(ngModel)]="product.noOfProduct" min="1"> {{product.noOfProduct}}
+        </td>
+    </tr>
+     <tr>
+        <td>Total Price:</td>
+         <td>₹{{product.totalPrice*product.noOfProduct}}</td>
+         
+     </tr>
+     <tr><td><a><button  color="primary" mat-raised-button>Buy</button></a></td>
+        <td><a><button color="warn" mat-raised-button>Delete</button></a></td></tr>
+     
+    </table>
+    <br>
+</div>

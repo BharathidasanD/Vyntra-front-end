@@ -17,6 +17,7 @@
             <mat-card-actions>
                 <p>₹{{product.productPrice}}</p>
                 <button mat-raised-button color="primary">Buy</button>
+                <button mat-raised-button (click)="addProductToCart(product.productId)">Add to cart</button>
                 <button mat-raised-button>SHARE</button>
             </mat-card-actions>
         </mat-card>

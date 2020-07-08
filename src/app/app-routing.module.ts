@@ -8,6 +8,7 @@ import { ProductsComponent } from './admin/products/products.component';
 import { CustomershoppingComponent } from './customershopping/customershopping.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ShoppingcartComponent } from './customershopping/shoppingcart/shoppingcart.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'myprofile',component:MyProfileComponent},
   {path:'admin/products',component:ProductsComponent},
   {path:'admin',component:AdminComponent},
-  {path:'logout',component:LogoutComponent}
+  {path:'logout',component:LogoutComponent},
+  {path:'cart',component:ShoppingcartComponent}
   
   
 ];
