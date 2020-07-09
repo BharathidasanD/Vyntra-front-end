@@ -46,10 +46,11 @@ export class CustomershoppingComponent implements OnInit  {
   }
 
   addProductToCart(productid:number){
+    let logedUser=sessionStorage.getItem("logedUserId");
     this.cartdetail=new Cart();
     this.cartdetail.noOfProducts=1;
     this.cartdetail.productId=productid;
-    this.cartdetail.userId=2;
+    this.cartdetail.userId=Number(logedUser);
     this.cartservice.setCartItems(this.cartdetail).subscribe((data)=>this.msg=data);
     console.log(this.msg);
   }

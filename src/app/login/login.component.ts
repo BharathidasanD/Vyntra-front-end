@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +13,30 @@ export class LoginComponent implements OnInit {
   userName="";
   password="";
   message:string;
-  constructor(private router:Router) {
+  invalidLogin=false;
+  
+  constructor(private router:Router,private authservice:AuthenticationService) {
    }
 
   ngOnInit(): void {
   }
 
-    admin_login(){
-      if(this.userName=='iamadmin@admin.vynta' && this.password=='password1Aa'){
-    
-        this.router.navigate(['/admin']);
-      }
-      else{
-        this.message="inavalid username or password";
-      }
+    authenticate_login(){
+     this.authservice.authenticateUser(this.userName,this.password).subscribe((data)=>this.check(data));
+    }
+    check(id){
+      if(id!==0){
+        console.log("allowed");
+        this.authservice.settingSession(id);
+        this.invalidLogin=false;
+        console.log(id);
+        this.router.navigate(['/home']);
+    }
+    else{
+      console.log(id);
+      this.invalidLogin=true;
+      this.message="inavalid username password";
+    }
 
     }
 }

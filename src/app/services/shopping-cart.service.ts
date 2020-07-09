@@ -11,7 +11,8 @@ export class ShoppingCartService {
   constructor(private httpclient:HttpClient) { }
 
   getCartItems(){
-   return this.httpclient.get<ShoppingCart[]>("http://localhost:8080/cart/listcartdetails");
+    let logedUser=Number(sessionStorage.getItem("logedUserId"));
+   return this.httpclient.get<ShoppingCart[]>("http://localhost:8080/cart/listcartdetails/"+logedUser);
   }
 
   setCartItems(cartitem){

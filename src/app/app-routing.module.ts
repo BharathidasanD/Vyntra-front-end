@@ -9,6 +9,7 @@ import { CustomershoppingComponent } from './customershopping/customershopping.c
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ShoppingcartComponent } from './customershopping/shoppingcart/shoppingcart.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path:'admin/products',component:ProductsComponent},
   {path:'admin',component:AdminComponent},
   {path:'logout',component:LogoutComponent},
-  {path:'cart',component:ShoppingcartComponent}
+  {path:'cart',component:ShoppingcartComponent,canActivate:[AuthGuardService]}
   
   
 ];
