@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Product } from '../Product';
 import { Cart } from '../cart';
 import { ShoppingCartService } from '../services/shopping-cart.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-customershopping',
@@ -19,7 +20,7 @@ export class CustomershoppingComponent implements OnInit  {
    cartdetail:Cart;
 
   constructor(private productservice:ProductService,
-    private router:Router,private cartservice:ShoppingCartService) { }
+    private router:Router,private cartservice:ShoppingCartService,private authservice:AuthenticationService) { }
 
   ngOnInit(): void {
    this.refereshData();   
@@ -46,6 +47,7 @@ export class CustomershoppingComponent implements OnInit  {
   }
 
   addProductToCart(productid:number){
+    if(this.authservice.isUserLogedIn()){
     let logedUser=sessionStorage.getItem("logedUserId");
     this.cartdetail=new Cart();
     this.cartdetail.noOfProducts=1;
@@ -53,6 +55,10 @@ export class CustomershoppingComponent implements OnInit  {
     this.cartdetail.userId=Number(logedUser);
     this.cartservice.setCartItems(this.cartdetail).subscribe((data)=>this.msg=data);
     console.log(this.msg);
+    }
+    else{
+      this.router.navigate(['/login']);
+    }
   }
   
 }
